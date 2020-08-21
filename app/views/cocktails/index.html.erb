@@ -4,19 +4,20 @@
     <%= link_to 'Add new cocktail', new_cocktail_path %>
   </div>
 
-  <div>
+  <div class="m-2 border rounded p-2 row justify-content-center">
     <% @cocktails.each do |cocktail| %>
+    <div class="col-3 m-3">
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
+        <img class="card-img-top" src="https://source.unsplash.com/random" alt="#">
         <div class="card-body">
           <p><%= cocktail.description %></p>
           <%= link_to cocktail.name, cocktail_path(cocktail) %>
           <%# add class btn btn-primary %>
         </div>
       </div>
+    </div>
+      
     <% end %>
   </div>
   
 </div>
-
-
