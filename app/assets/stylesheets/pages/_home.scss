@@ -1,1 +1,36 @@
 // Specific CSS for your home-page
+.container {
+    display: flex;
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
+    padding: 16px;
+    flex-grow: 1;
+  }
+  
+  @media(max-width: 1200px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr)
+    }
+  }
+  /* min-width prevalece até que tenha uma ordem explicita falando o que fazer. Se fosse min aqui e nao tivesse o display:blcok pro mapa, ele nao apareceria */
+  @media(max-width: 962px) {
+    .cards {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  @media(max-width: 768px) {
+    .cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media(max-width: 576px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
