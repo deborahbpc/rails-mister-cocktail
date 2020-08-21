@@ -2,11 +2,12 @@ class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show]
 
   def index
-    @cocktails = Cocktail.all
     @search = params['search']
     if @search.present? && @search != ''
       @name = @search["name"]
       @cocktails = Cocktail.where("name ILIKE ?", "%#{@name}%")
+    else
+      @cocktails = Cocktail.all
     end
   end
 
