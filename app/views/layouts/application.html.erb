@@ -14,22 +14,22 @@
 
   <body>
     <p id="notice"><%= notice %></p>
-    <div class="container-main">
-      <div class="navbar-minimalist">
-        <%= link_to cocktails_path do %>
-          <i class="fas fa-glass-cheers"></i>
-          <span>Cocktails for life</span>
-        <% end %>
+    <div class="navbar-minimalist">
+      <%= link_to cocktails_path do %>
+        <i class="fas fa-glass-cheers"></i>
+        <span>Cocktails for life</span>
+      <% end %>
 
-        <%= simple_form_for :search, url: root_path, method: 'GET', html: { class: 'form-inline' } do |f| %>
-          <%= f.input :name, label: false, placeholder:  'Looking for something?', input_html: {value: ""} %>
-          <%# the input_html blank default is to reset the form on page reload %>
-          <%= f.submit "Search", class: "btn btn-primary" %>
-        <% end %>
-      </div>
-      <%= yield %>
+      <%= simple_form_for :search, url: root_path, method: 'GET', html: { class: 'form-inline' } do |f| %>
+        <%= f.input :name, label: false, placeholder:  'Looking for something?', input_html: {value: ""} %>
+        <%# the input_html blank default is to reset the form on page reload %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    
+    <%= yield %>
 
-      <div class="footer">
+    <div class="footer">
         <div class="links">
           <a href="https://www.linkedin.com/in/deborahbeatriz/" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://github.com/deborahbpc" target="_blank"><i class="fab fa-fw fa-github"></i></a>
@@ -39,6 +39,5 @@
           <p>This website was coded with a lot of <i class="far fa-heart"></i> at Le Wagon.</p>
         </div>
       </div>
-    </div>
   </body>
 </html>
