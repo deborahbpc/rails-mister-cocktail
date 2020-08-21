@@ -1,6 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  // font-family: serif; find a better one
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +14,10 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-lewagon {
+  .fa-glass-cheers {
+    color: rgba(167, 10, 83, 0.719);
+  }
 }
