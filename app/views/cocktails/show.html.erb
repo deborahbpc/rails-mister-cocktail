@@ -1,4 +1,6 @@
+<%# add banner with image %>
 <h1><%= @cocktail.name %></h1>
+<p><%= @cocktail.description %></p>
 
 <% @cocktail.doses.each do |dose| %>
   <p>

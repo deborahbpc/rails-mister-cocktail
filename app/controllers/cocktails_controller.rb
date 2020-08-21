@@ -3,6 +3,11 @@ class CocktailsController < ApplicationController
 
   def index
     @cocktails = Cocktail.all
+    @search = params['search']
+    if @search.present? && @search != ''
+      @name = @search["name"]
+      @cocktails = Cocktail.where("name ILIKE ?", "%#{@name}%")
+    end
   end
 
   def show
@@ -29,6 +34,10 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :description)
+  end
+
+  def search_params
+    params.require(:search).permit(:name)
   end
 end
