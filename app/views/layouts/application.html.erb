@@ -13,7 +13,6 @@
   </head>
 
   <body>
-    <p id="notice"><%= notice %></p>
     <div class="navbar-minimalist">
       <%= link_to cocktails_path do %>
         <i class="fas fa-glass-cheers"></i>
@@ -26,7 +25,7 @@
         <%= f.submit "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
-    
+    <p id="notice"><%= notice %></p>
     <%= yield %>
 
     <div class="footer">
